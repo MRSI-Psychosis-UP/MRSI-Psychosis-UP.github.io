@@ -201,6 +201,18 @@
     background:var(--surface); border:1px solid var(--line);
     padding:28px;
   }
+  .tool-card img{
+    width:100%; height:150px; object-fit:cover;
+    background:#0d1119; border:1px solid var(--line);
+    margin-bottom:22px;
+  }
+  .tool-card .thumb-placeholder{
+    width:100%; height:150px;
+    background:#0d1119; border:1px solid var(--line);
+    margin-bottom:22px;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--text-faint); font-size:12.5px;
+  }
   .tool-card h3{font-size:20px; margin-bottom:10px;}
   .tool-card p{color:var(--text-dim); font-size:14.5px; margin-bottom:16px;}
   .tool-card a{color:var(--teal); font-size:14px;}
@@ -390,16 +402,19 @@
       </div>
       <div class="tools-grid">
         <div class="tool-card">
+          <img src="images/tools/mrsiprep_thumb.png" alt="MRSIPrep — multimetabolite MRSI brain slices">
           <h3>MRSIPrep</h3>
           <p>A robust preprocessing pipeline for whole-brain MRSI (magnetic resonance spectroscopic imaging) data, available via Docker and PyPI.</p>
           <a href="https://github.com/MRSI-Psychosis-UP/MRSIPrep" target="_blank" rel="noopener">View on GitHub →</a>
         </div>
         <div class="tool-card">
+          <div class="thumb-placeholder">Add thumbnail</div>
           <h3>VLAD</h3>
           <p>A bash-based workflow for voxel-based analysis of MRSI, DTI and structural MRI data — cohort configuration, FSL-compatible design matrices, Randomise/SwE analyses, and HTML result summaries.</p>
           <a href="https://github.com/MRSI-Psychosis-UP/VLAD" target="_blank" rel="noopener">View on GitHub →</a>
         </div>
         <div class="tool-card">
+          <img src="images/tools/donald_thumb.png" alt="DONALD — Distributed Open source Network AnaLysis Dashboard">
           <h3>DONALD</h3>
           <p>A Qt GUI to load, inspect, aggregate, harmonize and analyze connectome matrices.</p>
           <a href="https://github.com/MRSI-Psychosis-UP/DONALD" target="_blank" rel="noopener">View on GitHub →</a>
