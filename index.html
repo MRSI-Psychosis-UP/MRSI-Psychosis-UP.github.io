@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Psychosis Unit — Centre for Psychiatric Neuroscience, CHUV</title>
+<meta name="description" content="Psychosis Unit, Department of Psychiatry and Centre for Psychiatric Neuroscience, CHUV University Hospital of Lausanne — translational research into the neurobiological mechanisms of psychosis.">
+<link rel="icon" type="image/png" href="images/brand/logo.png">
+<meta property="og:title" content="Psychosis Unit — Centre for Psychiatric Neuroscience, CHUV">
+<meta property="og:description" content="Translational research into the neurobiological mechanisms underlying psychosis, to improve care for adolescents and young adults with schizophrenia-spectrum and other psychotic disorders.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0d13;
+    --bg-alt:#111520;
+    --surface:#151a26;
+    --line:#242b3d;
+    --text:#e7e9ee;
+    --text-dim:#9aa3b5;
+    --text-faint:#6b7387;
+    --teal:#4fd1c0;
+    --amber:#e7a33e;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Inter', sans-serif;
+    font-weight:500;
+    line-height:1.15;
+    letter-spacing:0.001em;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+  section{padding:112px 0;}
+  .rule{border-top:1px solid var(--line);}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--teal); outline-offset:3px;
+  }
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,13,19,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:68px;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-size:15px; color:var(--text);}
+  .brand img{height:32px; width:auto;}
+  .navlinks{display:flex; gap:30px;}
+  .navlinks a{
+    font-size:14.5px; color:var(--text-dim);
+    transition:color .15s ease;
+    position:relative;
+    padding-bottom:2px;
+  }
+  .navlinks a:hover{color:var(--teal);}
+  .navlinks a.active{color:var(--teal);}
+  .navlinks a.active::after{
+    content:'';
+    position:absolute; left:0; right:0; bottom:-4px;
+    height:1.5px; background:var(--teal);
+  }
+  .navtoggle{display:none; background:none; border:none; color:var(--text); font-size:22px; cursor:pointer;}
+
+  @media (max-width:760px){
+    .navlinks{
+      position:absolute; top:68px; left:0; right:0;
+      flex-direction:column; gap:0;
+      background:var(--bg-alt); border-bottom:1px solid var(--line);
+      max-height:0; overflow:hidden; transition:max-height .25s ease;
+    }
+    .navlinks.open{max-height:360px;}
+    .navlinks a{padding:16px 32px; border-top:1px solid var(--line);}
+    .navtoggle{display:block;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:120px 0 96px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;
+  }
+  .kicker{
+    color:var(--teal); font-size:14.5px; margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(34px, 5vw, 54px);
+    color:var(--text);
+    max-width:13ch;
+  }
+  .hero p.lede{
+    margin-top:24px; max-width:52ch;
+    color:var(--text-dim); font-size:17px;
+  }
+  .hero-figure{
+    position:relative; aspect-ratio:1/1;
+    overflow:hidden;
+    background:var(--surface);
+    border:1px solid var(--line);
+  }
+  .hero-figure img{
+    width:100%; height:100%; object-fit:cover;
+    filter:saturate(1.1) brightness(0.95);
+  }
+  .hero-figure-fade{
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 50% 50%, rgba(10,13,19,0) 45%, var(--bg) 92%);
+    pointer-events:none;
+  }
+  @media (max-width:800px){
+    .hero-figure{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- section headers ---------- */
+  .section-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    gap:24px; margin-bottom:48px; flex-wrap:wrap;
+  }
+  .section-head h2{
+    font-size:clamp(26px, 3vw, 34px);
+  }
+  .section-head .sub{color:var(--text-faint); font-size:14.5px; max-width:34ch;}
+
+  /* ---------- research ---------- */
+  .research-body{
+    max-width:70ch;
+  }
+  .research-body p{color:var(--text-dim); margin-bottom:18px; font-size:15.5px;}
+  .research-body p:last-child{margin-bottom:0;}
+  .research-video{
+    margin-top:48px;
+    border:1px solid var(--line); background:var(--surface);
+    overflow:hidden;
+    position:relative; aspect-ratio:16/9;
+  }
+  .research-video iframe{
+    position:absolute; inset:0; width:100%; height:100%; border:0;
+  }
+  .research-video figcaption{
+    padding:12px 16px; font-size:12.5px; color:var(--text-faint);
+    border-top:1px solid var(--line);
+  }
+
+  /* ---------- publications ---------- */
+  .pub{
+    display:grid; grid-template-columns:110px 1fr; gap:24px;
+    padding:28px 0; border-top:1px solid var(--line);
+  }
+  .pub:last-of-type{border-bottom:1px solid var(--line);}
+  .pub .pub-icon{
+    width:110px; height:110px; border:1px solid var(--line);
+    background:var(--surface);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--text-faint); font-size:12px; text-align:center; padding:8px;
+  }
+  .pub h3{font-size:19px; margin-bottom:8px; color:var(--text); max-width:46ch;}
+  .pub .meta{color:var(--amber); font-size:13.5px; margin-bottom:8px;}
+  .pub p{color:var(--text-dim); font-size:14.5px; max-width:60ch;}
+  .pub a.journal{color:var(--teal);}
+  @media (max-width:600px){
+    .pub{grid-template-columns:1fr;}
+    .pub .pub-icon{width:72px; height:72px;}
+  }
+
+  .scholar-link{
+    display:inline-block; margin-top:32px; font-size:14.5px; color:var(--teal);
+    border-bottom:1px solid rgba(79,209,192,0.4);
+    padding-bottom:2px;
+  }
+
+  .placeholder-note{
+    margin-top:28px; padding:14px 18px; font-size:13px; color:var(--text-faint);
+    border:1px dashed var(--line); background:var(--surface);
+  }
+
+  /* ---------- tools ---------- */
+  .tools-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:32px;
+  }
+  .tool-card{
+    background:var(--surface); border:1px solid var(--line);
+    padding:28px;
+  }
+  .tool-card h3{font-size:20px; margin-bottom:10px;}
+  .tool-card p{color:var(--text-dim); font-size:14.5px; margin-bottom:16px;}
+  .tool-card a{color:var(--teal); font-size:14px;}
+  @media (max-width:900px){.tools-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.tools-grid{grid-template-columns:1fr;}}
+
+  /* ---------- team ---------- */
+  .team-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:32px;
+  }
+  .member .avatar{
+    width:100%; aspect-ratio:1/1;
+    border:1px solid var(--line);
+    background:var(--surface);
+    display:flex; align-items:center; justify-content:center;
+    font-size:28px; color:var(--text-faint); font-family:'Inter', sans-serif;
+  }
+  .member h3{font-size:18px; margin-top:18px;}
+  .member .role{color:var(--teal); font-size:13.5px; margin:4px 0 12px;}
+  .member ul{list-style:none; color:var(--text-faint); font-size:13.5px;}
+  .member ul li{padding:3px 0; border-top:1px solid var(--line); padding-top:6px; margin-top:6px;}
+  .member ul li:first-child{border-top:none; margin-top:0;}
+  @media (max-width:760px){.team-grid{grid-template-columns:1fr 1fr; gap:24px;}}
+  @media (max-width:520px){.team-grid{grid-template-columns:1fr;}}
+
+  /* ---------- about ---------- */
+  .about-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:64px;
+  }
+  .about-grid p{color:var(--text-dim); font-size:15px; margin-bottom:16px;}
+  .about-grid h3{font-size:17px; margin:26px 0 10px; color:var(--text);}
+  .about-grid h3:first-child{margin-top:0;}
+  .contact-card{
+    border:1px solid var(--line); background:var(--surface);
+    padding:26px; margin-top:4px;
+  }
+  .contact-card .name{font-family:'Inter', sans-serif; font-size:18px;}
+  .contact-card .email{color:var(--teal); font-size:14.5px; margin-top:6px; display:inline-block;}
+  .about-photo{
+    border:1px solid var(--line); overflow:hidden; margin-top:18px;
+    height:190px; display:flex; align-items:center; justify-content:center;
+    background:var(--surface); color:var(--text-faint); font-size:13px;
+  }
+
+  .funding{
+    margin-top:64px; padding-top:40px; border-top:1px solid var(--line);
+    display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+  }
+  .funding p{color:var(--text-faint); font-size:13.5px; max-width:58ch;}
+
+  footer{
+    border-top:1px solid var(--line); padding:32px 0;
+  }
+  footer .wrap{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    color:var(--text-faint); font-size:13px;
+  }
+  footer a{color:var(--text-dim);}
+
+  #toTop{
+    position:fixed; right:24px; bottom:24px; z-index:40;
+    width:42px; height:42px;
+    background:var(--surface); border:1px solid var(--line);
+    color:var(--text-dim);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer;
+    opacity:0; visibility:hidden; transform:translateY(6px);
+    transition:opacity .2s ease, transform .2s ease, color .15s ease, border-color .15s ease;
+  }
+  #toTop.visible{opacity:1; visibility:visible; transform:translateY(0);}
+  #toTop:hover{color:var(--teal); border-color:var(--teal);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#" aria-label="Psychosis Unit, CHUV">
+      <img src="images/brand/logo.png" alt="" onerror="this.style.display='none'">
+      Psychosis Unit
+    </a>
+    <button class="navtoggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">☰</button>
+    <div class="navlinks" id="navLinks">
+      <a href="#research" data-section="research">Research</a>
+      <a href="#publications" data-section="publications">Publications</a>
+      <a href="#tools" data-section="tools">Tools</a>
+      <a href="#team" data-section="team">Team</a>
+      <a href="#about" data-section="about">About &amp; contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">Centre for Psychiatric Neuroscience</div>
+        <h1>Psychosis Unit</h1>
+        <p class="lede">We study the neurobiological mechanisms underlying psychosis, to improve care for adolescents and young adults with schizophrenia-spectrum and other psychotic disorders.</p>
+        <p class="lede">Department of Psychiatry, CHUV University Hospital of Lausanne.</p>
+      </div>
+      <div class="hero-figure" aria-hidden="true">
+        <img src="images/general/mrsi_connectome.png" alt="">
+        <div class="hero-figure-fade"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Research</h2>
+        <p class="sub">Translational research into the mechanisms of psychosis.</p>
+      </div>
+      <div class="research-body">
+        <p>The primary mission of the Psychosis Unit is to better understand the neurobiological mechanisms underlying psychosis, in order to improve the care of adolescents and young adults suffering from schizophrenia-spectrum disorders or other psychotic disorders.</p>
+        <p>Since its creation in 2022, our Unit conducts "translational" research. This means that our work draws both on clinical data from patients participating in our studies (for example, blood markers or symptom severity) and on laboratory experiments (for example, experimental disease models using cell cultures). This approach has been applied for over a decade at the Centre for Psychiatric Neuroscience; it was introduced by Kim Do (former head of the Unit for Research in Schizophrenia), in collaboration with the clinical services of the Department of Psychiatry, and has since developed progressively with the support of the NCCR-Synapsy.</p>
+        <p>We are also strongly committed to training a new generation of young clinician-researchers, some of whom follow an MD-PhD program. Clinician-researchers are essential for bridging the gap between clinical practice and fundamental research, and for maintaining a dialogue between healthcare professionals and patients on one hand, and neuroscientists on the other.</p>
+        <p>The Unit is therefore composed of a multidisciplinary team that includes both scientists (biologists, a physicist, a biochemist) and clinicians (physicians, psychologists, an art therapist).</p>
+      </div>
+      <figure class="research-video">
+        <iframe src="https://player.vimeo.com/video/1007588245?title=0&amp;byline=0&amp;portrait=0" title="Psychosis Unit research" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </figure>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Publications</h2>
+        <p class="sub">Selected work from the Unit.</p>
+      </div>
+
+      <div class="pub-list">
+
+        <article class="pub">
+          <div class="pub-icon">Add<br>figure</div>
+          <div>
+            <div class="meta">Author et al. · Journal, Year</div>
+            <h3>[Placeholder] Publication title goes here</h3>
+            <p>One or two sentence summary of the paper's finding and relevance. <a class="journal" href="#" target="_blank" rel="noopener">Read the paper →</a></p>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-icon">Add<br>figure</div>
+          <div>
+            <div class="meta">Author et al. · Journal, Year</div>
+            <h3>[Placeholder] Publication title goes here</h3>
+            <p>One or two sentence summary of the paper's finding and relevance. <a class="journal" href="#" target="_blank" rel="noopener">Read the paper →</a></p>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-icon">Add<br>figure</div>
+          <div>
+            <div class="meta">Author et al. · Journal, Year</div>
+            <h3>[Placeholder] Publication title goes here</h3>
+            <p>One or two sentence summary of the paper's finding and relevance. <a class="journal" href="#" target="_blank" rel="noopener">Read the paper →</a></p>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="placeholder-note">Publications are placeholders — replace the title, authors, journal, link and thumbnail in the <code>.pub-list</code> block of index.html, or send me the real list to fill in.</p>
+
+      <a class="scholar-link" href="#" target="_blank" rel="noopener">See the full publication list on Google Scholar →</a>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- TOOLS -->
+  <section id="tools">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Tools</h2>
+        <p class="sub">Open-source software from the Unit.</p>
+      </div>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <h3>MRSIPrep</h3>
+          <p>A robust preprocessing pipeline for whole-brain MRSI (magnetic resonance spectroscopic imaging) data, available via Docker and PyPI.</p>
+          <a href="https://github.com/MRSI-Psychosis-UP/MRSIPrep" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+        <div class="tool-card">
+          <h3>VLAD</h3>
+          <p>A bash-based workflow for voxel-based analysis of MRSI, DTI and structural MRI data — cohort configuration, FSL-compatible design matrices, Randomise/SwE analyses, and HTML result summaries.</p>
+          <a href="https://github.com/MRSI-Psychosis-UP/VLAD" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+        <div class="tool-card">
+          <h3>DONALD</h3>
+          <p>A Qt GUI to load, inspect, aggregate, harmonize and analyze connectome matrices.</p>
+          <a href="https://github.com/MRSI-Psychosis-UP/DONALD" target="_blank" rel="noopener">View on GitHub →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- TEAM -->
+  <section id="team">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Team</h2>
+        <p class="sub">The people of the Psychosis Unit.</p>
+      </div>
+      <div class="team-grid">
+
+        <div class="member">
+          <div class="avatar">PK</div>
+          <h3>Paul Klauser</h3>
+          <div class="role">Head of Unit</div>
+          <ul>
+            <li>Child and adolescent psychiatrist and psychotherapist, MD-PhD</li>
+          </ul>
+        </div>
+
+        <div class="member">
+          <div class="avatar">DD</div>
+          <h3>Daniella Dwir</h3>
+          <div class="role">Project Leader</div>
+          <ul>
+            <li>Biologist, PhD</li>
+          </ul>
+        </div>
+
+        <div class="member">
+          <div class="avatar">PS</div>
+          <h3>Pascal Steullet</h3>
+          <div class="role">Head of Research</div>
+          <ul>
+            <li>Biologist, PhD</li>
+          </ul>
+        </div>
+
+        <div class="member">
+          <div class="avatar">BG</div>
+          <h3>Basilio Giangreco</h3>
+          <div class="role">Research Collaborator</div>
+          <ul>
+            <li>Biologist, PhD candidate</li>
+          </ul>
+        </div>
+
+        <div class="member">
+          <div class="avatar">FL</div>
+          <h3>Federico Lucchetti</h3>
+          <div class="role">Research Collaborator</div>
+          <ul>
+            <li>Physicist, PhD</li>
+          </ul>
+        </div>
+
+        <div class="member">
+          <div class="avatar">RJ</div>
+          <h3>Raoul Jenni</h3>
+          <div class="role">Research Collaborator</div>
+          <ul>
+            <li>Psychologist, PhD</li>
+          </ul>
+        </div>
+
+        <div class="member">
+          <div class="avatar">EC</div>
+          <h3>Edgar Céléreau</h3>
+          <div class="role">Psychiatrist in training</div>
+          <ul>
+            <li>MD-PhD candidate</li>
+          </ul>
+        </div>
+
+        <div class="member">
+          <div class="avatar">JA</div>
+          <h3>Jorge Alvarez</h3>
+          <div class="role">Psychiatrist in training</div>
+          <ul>
+            <li>MS in Pharmacy; MD candidate</li>
+          </ul>
+        </div>
+
+        <div class="member">
+          <div class="avatar">TP</div>
+          <h3>Teya Petrova</h3>
+          <div class="role">PhD candidate</div>
+          <ul>
+            <li>Psychologist</li>
+          </ul>
+        </div>
+
+        <div class="member">
+          <div class="avatar">DV</div>
+          <h3>Daphné Vorburger</h3>
+          <div class="role">PhD candidate</div>
+          <ul>
+            <li>Biologist</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>About &amp; contact</h2>
+        <p class="sub">Where we work, and how to reach us.</p>
+      </div>
+      <div class="about-grid">
+        <div>
+          <h3>Centre for Psychiatric Neuroscience</h3>
+          <p>The Psychosis Unit is part of the Department of Psychiatry and the Centre for Psychiatric Neuroscience at CHUV, the University Hospital of Lausanne. Our translational approach was introduced at the Centre over a decade ago by Kim Do, former head of the Unit for Research in Schizophrenia, in collaboration with the clinical services of the Department of Psychiatry, and has since grown with the support of the NCCR-Synapsy.</p>
+
+          <h3>CHUV — University Hospital of Lausanne</h3>
+          <p>CHUV is a leading university hospital and research centre in Lausanne, Switzerland, combining clinical care, teaching and research across medicine and neuroscience.</p>
+          <div class="about-photo">[Add a photo of CHUV / the Centre for Psychiatric Neuroscience]</div>
+        </div>
+        <div>
+          <div class="contact-card">
+            <div class="name">Dr Paul Klauser</div>
+            <div class="role" style="color:var(--text-faint); font-size:13.5px; margin-top:4px;">Head of Unit</div>
+            <a class="email" href="mailto:paul.klauser@chuv.ch">paul.klauser@chuv.ch</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="funding">
+        <p>We gratefully acknowledge support from the NCCR-Synapsy and the Department of Psychiatry, CHUV.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Psychosis Unit, Centre for Psychiatric Neuroscience, CHUV</span>
+    <span><a href="https://github.com/MRSI-Psychosis-UP" target="_blank" rel="noopener">github.com/MRSI-Psychosis-UP</a></span>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  const navAnchors = document.querySelectorAll('.navlinks a[data-section]');
+  const sections = [...navAnchors].map(a => document.getElementById(a.dataset.section)).filter(Boolean);
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = document.querySelector(`.navlinks a[data-section="${entry.target.id}"]`);
+      if (!link) return;
+      if (entry.isIntersecting) {
+        navAnchors.forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  sections.forEach(s => spy.observe(s));
+
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('visible', window.scrollY > 700);
+  }, { passive: true });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+</body>
+</html>
