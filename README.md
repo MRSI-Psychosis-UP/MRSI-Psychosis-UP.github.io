@@ -14,7 +14,7 @@ https://multiscale-neurodevelopment.github.io/.
 - `images/brand/orcid.svg` — locally stored ORCID iD icon used by team profile links.
 - `images/team/` — team headshots, including `paul_klauser.png`.
 - `images/publications/` — publication thumbnails; see the [filename guide](images/publications/README.md).
-- `images/general/` — optional figures (e.g. research images).
+- `images/general/cover.png` — opening cover image.
 
 ## To-do / placeholders to replace
 
