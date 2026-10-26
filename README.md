@@ -51,3 +51,10 @@ The unmodified ORCID iD icon is stored locally at `images/brand/orcid.svg` and w
 downloaded from [ORCID's website](https://orcid.org/assets/vectors/orcid.logo.icon.svg).
 See the [ORCID brand guidelines](https://info.orcid.org/brand-guidelines/).
 ORCID™ and the iD logo are trademarks of ORCID, Inc.
+
+## Master Students and Alumni
+
+Two simple name lists appear beneath the team cards, in this order:
+Master Students (`#master-students`), then Alumni (`#alumni`). Each list contains
+two sample names to replace with the real members. Edit each `<li>Full name</li>`
+inside the corresponding `<ul class="name-list">` in `index.html`.
