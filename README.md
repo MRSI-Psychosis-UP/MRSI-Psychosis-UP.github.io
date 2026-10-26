@@ -27,9 +27,9 @@ https://multiscale-neurodevelopment.github.io/.
 - **Tools**: the `#tools` section has 2 placeholder cards — point them at
   real repos (e.g. MRSI-Metabolic-Connectome, VLAD, MRSIPrep, DONALD) in the
   [MRSI-Psychosis-UP](https://github.com/MRSI-Psychosis-UP) org.
-- **Team photos**: Paul Klauser's photo is connected to
-  `images/team/paul_klauser.png`. Other members show initials in a plain box
-  (`.avatar`) — swap for an `<img>` once photos are available.
+- **Team photos**: seven team members have headshots connected in
+  `images/team/`. Remaining members show initials in a plain box (`.avatar`)
+  until photos are available.
 
 ## Publishing to GitHub Pages
 
