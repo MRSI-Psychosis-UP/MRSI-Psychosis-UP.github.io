@@ -55,6 +55,7 @@ ORCID™ and the iD logo are trademarks of ORCID, Inc.
 ## Master Students and Alumni
 
 Two simple name lists appear beneath the team cards, in this order:
-Master Students (`#master-students`), then Alumni (`#alumni`). Each list contains
-two sample names to replace with the real members. Edit each `<li>Full name</li>`
-inside the corresponding `<ul class="name-list">` in `index.html`.
+Master Students (`#master-students`), then Alumni (`#alumni`). The students are
+Maud Althaus and Maryam. Alumni still contains two sample names to replace with
+the real members. Edit each `<li>Full name</li>` inside the corresponding
+`<ul class="name-list">` in `index.html`.
