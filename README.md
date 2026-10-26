@@ -15,6 +15,7 @@ https://multiscale-neurodevelopment.github.io/.
 - `images/team/` — team headshots, including `paul_klauser.png`.
 - `images/publications/` — publication thumbnails; see the [filename guide](images/publications/README.md).
 - `images/general/cover.png` — opening cover image.
+- `images/general/chuv.png` — CHUV logo in the About & contact section.
 
 ## To-do / placeholders to replace
 
@@ -29,7 +30,6 @@ https://multiscale-neurodevelopment.github.io/.
 - **Team photos**: Paul Klauser's photo is connected to
   `images/team/paul_klauser.png`. Other members show initials in a plain box
   (`.avatar`) — swap for an `<img>` once photos are available.
-- **About photo**: add a campus/centre photo in the `.about-photo` box.
 
 ## Publishing to GitHub Pages
 
