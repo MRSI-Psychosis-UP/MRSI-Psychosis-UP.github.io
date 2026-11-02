@@ -3,7 +3,7 @@
 Static GitHub Pages site for the Psychosis Unit, Department of Psychiatry and
 Centre for Psychiatric Neuroscience, CHUV University Hospital of Lausanne.
 
-Single-file site (`index.html`), styled after
+Single-file site (`index.html`), rendered as https://mrsi-psychosis-up.github.io/ in the style of
 https://multiscale-neurodevelopment.github.io/.
 
 ## Structure
