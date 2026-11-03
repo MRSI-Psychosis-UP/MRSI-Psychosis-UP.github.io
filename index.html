@@ -269,6 +269,63 @@
   .name-list{list-style:none; color:var(--text-dim); font-size:15px;}
   .name-list li{padding:4px 0; overflow-wrap:anywhere;}
 
+  /* ---------- member profile pop-up ---------- */
+  .member .avatar{cursor:pointer; transition:border-color .15s ease;}
+  .member .avatar:hover, .member .avatar:focus-visible{border-color:var(--teal);}
+  .member .avatar:focus-visible{outline:2px solid var(--teal); outline-offset:3px;}
+  .member h3 > span, .member h3:not(:has(span)){cursor:pointer; transition:color .15s ease;}
+  .member:has(.avatar:hover) h3 > span, .member h3 > span:hover{color:var(--teal);}
+  body:has(.profile[open]){overflow:hidden;}
+  .profile{
+    width:min(780px, calc(100% - 32px)); max-height:calc(100% - 48px);
+    margin:auto; padding:0;
+    background:var(--bg-alt); color:var(--text);
+    border:1px solid var(--line);
+  }
+  .profile::backdrop{background:rgba(5,7,11,0.78); backdrop-filter:blur(3px);}
+  .profile-inner{display:grid; grid-template-columns:240px minmax(0,1fr); gap:36px; padding:40px;}
+  .profile-photo{
+    aspect-ratio:4/5; overflow:hidden; border:1px solid var(--line); background:var(--surface);
+    display:flex; align-items:center; justify-content:center;
+    font-size:40px; color:var(--text-faint);
+  }
+  .profile-photo img{width:100%; height:100%; object-fit:cover; object-position:center top;}
+  .profile h2{font-size:28px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .profile h2:focus{outline:none;}
+  .profile .profile-link{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:32px; height:32px; border-radius:4px;
+  }
+  .profile .profile-link:hover{background:var(--surface);}
+  .profile .profile-link img{width:24px; height:24px;}
+  .profile .linkedin-mark{
+    display:flex; align-items:center; justify-content:center;
+    width:24px; height:24px; border-radius:3px;
+    background:#0a66c2; color:#fff; font-size:16px; font-weight:600;
+  }
+  .profile .role{color:var(--teal); font-size:14.5px; margin-top:6px;}
+  .profile .details{list-style:none; color:var(--text-faint); font-size:14px; margin-top:4px;}
+  .profile .bio{margin-top:22px; color:var(--text-dim); font-size:15.5px;}
+  .profile .bio p + p{margin-top:12px;}
+  .profile .bio.pending{color:var(--text-faint); font-style:italic; font-size:14.5px;}
+  .profile h3{font-size:13px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--text-faint); margin:30px 0 4px;}
+  .profile-pubs{list-style:none;}
+  .profile-pubs li{padding:12px 0; border-top:1px solid var(--line);}
+  .profile-pubs li:first-child{border-top:none;}
+  .profile-pubs .meta{color:var(--amber); font-size:12.5px; margin-bottom:2px;}
+  .profile-pubs a{font-size:15px; color:var(--text);}
+  .profile-pubs a:hover{color:var(--teal);}
+  .profile-close{
+    position:absolute; top:12px; right:12px;
+    width:40px; height:40px; background:none; border:1px solid transparent;
+    color:var(--text-dim); font-size:24px; line-height:1; cursor:pointer;
+  }
+  .profile-close:hover{color:var(--teal); border-color:var(--line);}
+  @media (max-width:640px){
+    .profile-inner{grid-template-columns:1fr; gap:24px; padding:56px 20px 28px;}
+    .profile-photo{width:min(220px, 70%);}
+  }
+
   /* ---------- about ---------- */
   .about-grid{
     display:grid; grid-template-columns:1fr 1fr; gap:64px;
@@ -515,7 +572,7 @@
       </div>
       <div class="team-grid">
 
-        <div class="member">
+        <div class="member" data-authors="Paul Klauser|Klauser P">
           <div class="avatar">
             <img src="images/team/paul_klauser.png" alt="Paul Klauser" width="423" height="317" loading="lazy" decoding="async">
           </div>
@@ -529,9 +586,13 @@
           <ul>
             <li>Child and adolescent psychiatrist and psychotherapist, MD-PhD</li>
           </ul>
+          <div class="member-bio" hidden>
+            <p>Paul Klauser is a senior psychiatrist in the University Service of Child and Adolescent Psychiatry (SUPEA) at CHUV, where he leads the Psychosis Unit. After a PhD in neurobiology on synaptic plasticity and dendritic spine dynamics during brain development, he turned to neuroimaging (structural, diffusion and spectroscopic MRI) to bridge microscopic findings and the young patients he treats.</p>
+            <p>His work has shown that white matter alterations in schizophrenia converge on brain network hubs, and that N-acetylcysteine, a precursor of the brain antioxidant glutathione, can restore white matter integrity in the fornix of patients with early psychosis. He has been active in the Research Academy of the European Society for Child and Adolescent Psychiatry (ESCAP) since 2016 and collaborates with research groups across Europe and Australia.</p>
+          </div>
         </div>
 
-        <div class="member">
+        <div class="member" data-authors="Daniella Dwir|Daniela Dwir|Dwir D">
           <div class="avatar">
             <img src="images/team/danieladwir.jpeg" alt="Daniela Dwir-Giangreco" width="768" height="768" loading="lazy" decoding="async">
           </div>
@@ -545,9 +606,13 @@
           <ul>
             <li>Biologist, PhD</li>
           </ul>
+          <div class="member-bio" hidden>
+            <p>Daniela Dwir-Giangreco studies how genetic and environmental risk factors interact to cause oxidative stress and neuroinflammation during sensitive periods of brain development, and how this disrupts parvalbumin-expressing inhibitory interneurons and the excitatory/inhibitory balance seen in schizophrenia.</p>
+            <p>Working across induced pluripotent stem cell models, animal models and patient cohorts, she identified a vicious circle of oxidative stress and neuroinflammation driven by MMP9/RAGE. In patients in the early phase of psychosis, raised blood RAGE levels were linked to lower prefrontal GABA and improved with antioxidant supplementation, making MMP9/RAGE a promising biomarker and therapeutic target.</p>
+          </div>
         </div>
 
-        <div class="member">
+        <div class="member" data-authors="Pascal Steullet|Steullet P">
           <div class="avatar">
             <img src="images/team/pascal_steullet.jpeg" alt="Pascal Steullet" width="1160" height="1544" loading="lazy" decoding="async">
           </div>
@@ -561,9 +626,13 @@
           <ul>
             <li>Biologist, PhD</li>
           </ul>
+          <div class="member-bio" hidden>
+            <p>Pascal Steullet investigates the mechanisms behind the altered brain connectivity of schizophrenia, a neurodevelopmental disorder. His work showed how redox dysregulation and oxidative stress impair NMDA receptors, synaptic plasticity and fast-spiking parvalbumin interneurons, and, with Jan-Harry Cabungcal, that the perineuronal net surrounding these neurons protects them against oxidative stress.</p>
+            <p>More recently he has turned to the thalamus, using multimodal MRI to characterise thalamic abnormalities across the stages of psychosis and to look for imaging markers that precede a first psychotic episode.</p>
+          </div>
         </div>
 
-        <div class="member">
+        <div class="member" data-authors="Basilio Giangreco|Giangreco B">
           <div class="avatar">
             <img src="images/team/basilioGiangreco.jpeg" alt="Basilio Giangreco" width="800" height="800" loading="lazy" decoding="async">
           </div>
@@ -579,7 +648,7 @@
           </ul>
         </div>
 
-        <div class="member">
+        <div class="member" data-authors="Federico Lucchetti|Lucchetti F">
           <div class="avatar">
             <img src="images/team/federico_lucchetti.png" alt="Federico Lucchetti" width="1024" height="1536" loading="lazy" decoding="async">
           </div>
@@ -593,9 +662,12 @@
           <ul>
             <li>Physicist, PhD</li>
           </ul>
+          <div class="member-bio" hidden>
+            <p>Federico Lucchetti is a physicist working on whole-brain magnetic resonance spectroscopic imaging (MRSI). He led the construction of the human brain metabolic connectome from MRSI data and develops MRSIPrep, the Unit&#x27;s open-source MRSI preprocessing pipeline.</p>
+          </div>
         </div>
 
-        <div class="member">
+        <div class="member" data-authors="Raoul Jenni|Jenni R">
           <div class="avatar">
             <img src="images/team/raouljenni.jpeg" alt="Raoul Jenni" width="500" height="500" loading="lazy" decoding="async">
           </div>
@@ -611,7 +683,7 @@
           </ul>
         </div>
 
-        <div class="member">
+        <div class="member" data-authors="Edgar Céléreau|Céléreau E">
           <div class="avatar">
             <img src="images/team/edgar_celereau.jpeg" alt="Edgar Céléreau" width="800" height="1066" loading="lazy" decoding="async">
           </div>
@@ -625,9 +697,12 @@
           <ul>
             <li>MD-PhD candidate</li>
           </ul>
+          <div class="member-bio" hidden>
+            <p>Edgar Céléreau is a psychiatrist in training and MD-PhD candidate. His research uses high-resolution whole-brain MRSI to study brain metabolism in young people at risk for psychosis.</p>
+          </div>
         </div>
 
-        <div class="member">
+        <div class="member" data-authors="Jorge Alvarez|Alvarez J">
           <div class="avatar">
             <img src="images/team/jorgealvarez.jpeg" alt="Jorge Alvarez" width="640" height="640" loading="lazy" decoding="async">
           </div>
@@ -643,7 +718,7 @@
           </ul>
         </div>
 
-        <div class="member">
+        <div class="member" data-authors="Teya Petrova|Petrova T">
           <div class="avatar">
             <img src="images/team/teyapetrova.jpeg" alt="Teya Petrova" width="800" height="800" loading="lazy" decoding="async">
           </div>
@@ -659,7 +734,7 @@
           </ul>
         </div>
 
-        <div class="member">
+        <div class="member" data-authors="Daphné Vorburger|Vorburger D">
           <div class="avatar">
             <img src="images/team/daphnevorburger.jpeg" alt="Daphné Vorburger" width="800" height="800" loading="lazy" decoding="async">
           </div>
@@ -670,7 +745,7 @@
           </ul>
         </div>
 
-        <div class="member">
+        <div class="member" data-authors="Alejandro Rodriguez Guajardo|Rodriguez Guajardo A">
           <div class="avatar">ARG</div>
           <h3>Alejandro Rodriguez Guajardo</h3>
           <div class="role">PhD candidate</div>
@@ -741,6 +816,23 @@
 
 <button id="toTop" aria-label="Back to top">↑</button>
 
+<dialog class="profile" id="profile" aria-labelledby="profileName">
+  <button class="profile-close" id="profileClose" aria-label="Close profile">×</button>
+  <div class="profile-inner">
+    <div class="profile-photo" id="profilePhoto"></div>
+    <div>
+      <h2 id="profileName" tabindex="-1" autofocus></h2>
+      <div class="role" id="profileRole"></div>
+      <ul class="details" id="profileDetails"></ul>
+      <div class="bio" id="profileBio"></div>
+      <div id="profilePubsBlock">
+        <h3>Publications on this site</h3>
+        <ul class="profile-pubs" id="profilePubs"></ul>
+      </div>
+    </div>
+  </div>
+</dialog>
+
 <script>
   // Keep the placeholder visible until an uploaded publication figure loads.
   document.querySelectorAll('.pub-thumbnail').forEach(image => {
@@ -779,6 +871,105 @@
     toTop.classList.toggle('visible', window.scrollY > 700);
   }, { passive: true });
   toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Member profiles: clicking a team card opens a pop-up at #team/<name-slug>.
+  // Publications are matched against each card's data-authors aliases.
+  const slugify = text => text.normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const pubs = [...document.querySelectorAll('.pub')].map(pub => ({
+    pub,
+    authors: pub.querySelector('p').textContent.split(';').map(name => name.trim()),
+  }));
+  const profile = document.getElementById('profile');
+  const members = new Map();
+  let openedHere = false;
+
+  document.querySelectorAll('.team-grid .member').forEach(card => {
+    const nameEl = card.querySelector('h3 > span') || card.querySelector('h3');
+    const name = nameEl.textContent.trim();
+    const slug = slugify(name);
+    members.set(slug, card);
+    const avatar = card.querySelector('.avatar');
+    avatar.tabIndex = 0;
+    avatar.setAttribute('role', 'button');
+    avatar.setAttribute('aria-label', `Open ${name}'s profile`);
+    avatar.setAttribute('aria-haspopup', 'dialog');
+    const open = () => { openedHere = true; location.hash = `team/${slug}`; };
+    avatar.addEventListener('click', open);
+    avatar.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+    nameEl.addEventListener('click', e => { if (!e.target.closest('a')) open(); });
+  });
+
+  function fillProfile(card) {
+    const nameEl = card.querySelector('h3 > span') || card.querySelector('h3');
+    const photo = document.getElementById('profilePhoto');
+    const img = card.querySelector('.avatar img');
+    photo.replaceChildren();
+    if (img) {
+      const big = document.createElement('img');
+      big.src = img.src;
+      big.alt = img.alt;
+      photo.append(big);
+    } else {
+      photo.textContent = card.querySelector('.avatar').textContent.trim();
+    }
+
+    const heading = document.getElementById('profileName');
+    heading.replaceChildren(nameEl.firstChild.textContent.trim());
+    card.querySelectorAll('h3 .profile-link').forEach(link => heading.append(link.cloneNode(true)));
+
+    document.getElementById('profileRole').textContent = card.querySelector('.role')?.textContent.trim() || '';
+    const details = document.getElementById('profileDetails');
+    details.replaceChildren(...[...card.querySelectorAll(':scope > ul li')].map(li => li.cloneNode(true)));
+
+    const bio = document.getElementById('profileBio');
+    const bioSource = card.querySelector('.member-bio');
+    bio.classList.toggle('pending', !bioSource);
+    if (bioSource) bio.replaceChildren(...[...bioSource.children].map(el => el.cloneNode(true)));
+    else bio.textContent = 'Profile coming soon.';
+
+    const aliases = (card.dataset.authors || '').split('|').filter(Boolean);
+    const matches = pubs.filter(({ authors }) => authors.some(author => aliases.includes(author)));
+    document.getElementById('profilePubs').replaceChildren(...matches.map(({ pub }) => {
+      const li = document.createElement('li');
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      meta.textContent = pub.querySelector('.meta').textContent;
+      li.append(meta, pub.querySelector('h3 a').cloneNode(true));
+      return li;
+    }));
+    document.getElementById('profilePubsBlock').hidden = matches.length === 0;
+  }
+
+  function syncProfile() {
+    const match = location.hash.match(/^#team\/(.+)$/);
+    const card = match && members.get(match[1]);
+    if (card) {
+      fillProfile(card);
+      if (!profile.open) profile.showModal();
+      profile.scrollTop = 0;
+    } else if (profile.open) {
+      profile.close();
+    }
+  }
+
+  // Back button closes the pop-up; closing it drops the profile from the URL.
+  profile.addEventListener('close', () => {
+    const wasOpenedHere = openedHere;
+    openedHere = false;
+    if (!location.hash.startsWith('#team/')) return;
+    if (wasOpenedHere) history.back();
+    else history.replaceState(null, '', '#team');
+  });
+  document.getElementById('profileClose').addEventListener('click', () => profile.close());
+  profile.addEventListener('click', e => { if (e.target === profile) profile.close(); });
+  window.addEventListener('hashchange', syncProfile);
+  if (location.hash.startsWith('#team/')) {
+    document.getElementById('team').scrollIntoView();
+    syncProfile();
+  }
 </script>
 
 </body>
