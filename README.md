@@ -20,8 +20,10 @@ https://multiscale-neurodevelopment.github.io/.
 ## To-do / placeholders to replace
 
 - **Logo**: drop a PNG at `images/brand/logo.png`.
-- **Publication thumbnails**: the five papers are listed in `#publications`,
-  newest first, with all five thumbnails connected. Image paths are listed in
+- **Publication thumbnails**: the seven papers are listed in `#publications`,
+  newest first. Five have thumbnails; the Translational Psychiatry 2026
+  meta-analysis and the Molecular Psychiatry 2019 MMP9/RAGE paper still show
+  “Figure coming soon”. Image paths are listed in
   [images/publications/README.md](images/publications/README.md).
 - **Google Scholar link**: update the `href="#"` on `.scholar-link`.
 - **Tools**: the `#tools` section has 2 placeholder cards — point them at
@@ -44,18 +46,17 @@ https://multiscale-neurodevelopment.github.io/.
 
 The ORCID iD icons beside team names link to the supplied ORCID profiles. Jorge
 Alvarez's blue “in” badge links to LinkedIn. Links open in a new tab and have
-accessible labels. Daphné Vorburger and Alejandro Rodriguez Guajardo have no
-profile link yet. Alejandro is listed as a PhD candidate.
+accessible labels. Alejandro Rodriguez Guajardo has no profile link yet. Alejandro is listed as a PhD candidate.
 
 The unmodified ORCID iD icon is stored locally at `images/brand/orcid.svg` and was
 downloaded from [ORCID's website](https://orcid.org/assets/vectors/orcid.logo.icon.svg).
 See the [ORCID brand guidelines](https://info.orcid.org/brand-guidelines/).
 ORCID™ and the iD logo are trademarks of ORCID, Inc.
 
-## Master Students and Alumni
+## Master Students, Collaborators and Alumni
 
-Two simple name lists appear beneath the team cards, in this order:
-Master Students (`#master-students`), then Alumni (`#alumni`). The students are
-Maud Althaus and Maryam. Alumni still contains two sample names to replace with
-the real members. Edit each `<li>Full name</li>` inside the corresponding
-`<ul class="name-list">` in `index.html`.
+Three simple name lists appear beneath the team cards, in this order:
+Master Students (`#master-students`), Collaborators (`#collaborators`), then
+Alumni (`#alumni`). Alumni entries add the person's former position after the
+name in a faint `<span class="name-note">`. Edit each `<li>` inside the
+corresponding `<ul class="name-list">` in `index.html`.

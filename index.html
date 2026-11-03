@@ -268,6 +268,7 @@
   .team-roster h3{font-size:24px; margin-bottom:16px;}
   .name-list{list-style:none; color:var(--text-dim); font-size:15px;}
   .name-list li{padding:4px 0; overflow-wrap:anywhere;}
+  .name-list .name-note{color:var(--text-faint); font-size:14px;}
 
   /* ---------- member profile pop-up ---------- */
   .member .avatar{cursor:pointer; transition:border-color .15s ease;}
@@ -339,6 +340,7 @@
   }
   .contact-card .name{font-family:'Inter', sans-serif; font-size:18px;}
   .contact-card .email{color:var(--teal); font-size:14.5px; margin-top:6px; display:inline-block;}
+  @media (max-width:760px){.about-grid{grid-template-columns:1fr; gap:40px;}}
   .chuv-logo{
     width:190px; max-width:100%; height:auto; margin-top:18px;
   }
@@ -444,6 +446,23 @@
 
         <article class="pub">
           <div class="pub-icon" aria-hidden="true">
+            <img class="pub-thumbnail" src="images/publications/childhood_adversity_meta_analysis.png" alt="" width="110" height="110" loading="lazy" decoding="async">
+            <span class="pub-placeholder">Figure<br>coming soon</span>
+          </div>
+          <div>
+            <div class="meta">Translational Psychiatry · <time datetime="2026-09-19">19 September 2026</time></div>
+            <h3><a href="https://doi.org/10.1038/s41398-026-04457-w" target="_blank" rel="noopener">Revisiting the link between childhood adversity and stress-sensitive brain regions in psychosis and bipolar disorder: a systematic review and meta-analysis</a></h3>
+            <p>Teya Petrova; Andreas Øy Tennfjord; Daniela Cavero; Aisling Holohan; Melissa Kizilkaya; Ava Ebrahimian-Roodbari; Inès Lepreux; Marie Reimer; Lucia Sideli; Romayne Gadelrab; Giulia Trotta; Victoria Rodriguez; Ole A. Andreassen; Paul Klauser; Luis Alameda; Monica Aas</p>
+            <div class="pub-links">
+              <a class="journal" href="https://doi.org/10.1038/s41398-026-04457-w" target="_blank" rel="noopener">DOI: 10.1038/s41398-026-04457-w</a>
+              <a class="journal" href="https://pubmed.ncbi.nlm.nih.gov/42850223" target="_blank" rel="noopener">PMID: 42850223</a>
+              <a class="journal" href="https://europepmc.org/article/pmc/13650146" target="_blank" rel="noopener">PMC: PMC13650146</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-icon" aria-hidden="true">
             <img class="pub-thumbnail" src="images/publications/high_res_MRSI_EC.png" alt="" width="110" height="110" loading="lazy" decoding="async">
             <span class="pub-placeholder">Figure<br>coming soon</span>
           </div>
@@ -502,6 +521,23 @@
               <a class="journal" href="https://doi.org/10.1038/s41398-023-02728-4" target="_blank" rel="noopener">DOI: 10.1038/s41398-023-02728-4</a>
               <a class="journal" href="https://pubmed.ncbi.nlm.nih.gov/38233401" target="_blank" rel="noopener">PMID: 38233401</a>
               <a class="journal" href="https://europepmc.org/article/pmc/10794182" target="_blank" rel="noopener">PMC: PMC10794182</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="pub-icon" aria-hidden="true">
+            <img class="pub-thumbnail" src="images/publications/mmp9_rage.png" alt="" width="110" height="110" loading="lazy" decoding="async">
+            <span class="pub-placeholder">Figure<br>coming soon</span>
+          </div>
+          <div>
+            <div class="meta">Molecular Psychiatry · <time datetime="2019-03">March 2019</time></div>
+            <h3><a href="https://doi.org/10.1038/s41380-019-0393-5" target="_blank" rel="noopener">MMP9/RAGE pathway overactivation mediates redox dysregulation and neuroinflammation, leading to inhibitory/excitatory imbalance: a reverse translation study in schizophrenia patients</a></h3>
+            <p>Daniella Dwir; Basilio Giangreco; Lijing Xin; Liliane Tenenbaum; Jan-Harry Cabungcal; Pascal Steullet; Audrey Goupil; Martine Cleusix; Raoul Jenni; Abdelwahed Chtarto; Philipp S. Baumann; Paul Klauser; Philippe Conus; Rabindra Tirouvanziam; Michel Cuénod; Kim Q. Do</p>
+            <div class="pub-links">
+              <a class="journal" href="https://doi.org/10.1038/s41380-019-0393-5" target="_blank" rel="noopener">DOI: 10.1038/s41380-019-0393-5</a>
+              <a class="journal" href="https://pubmed.ncbi.nlm.nih.gov/30911107" target="_blank" rel="noopener">PMID: 30911107</a>
+              <a class="journal" href="https://europepmc.org/article/pmc/7577857" target="_blank" rel="noopener">PMC: PMC7577857</a>
             </div>
           </div>
         </article>
@@ -738,7 +774,12 @@
           <div class="avatar">
             <img src="images/team/daphnevorburger.jpeg" alt="Daphné Vorburger" width="800" height="800" loading="lazy" decoding="async">
           </div>
-          <h3>Daphné Vorburger</h3>
+          <h3>
+            <span>Daphné Vorburger</span>
+            <a class="profile-link orcid-link" href="https://orcid.org/0009-0000-9168-5348" target="_blank" rel="noopener noreferrer" aria-label="View Daphné Vorburger&#x27;s ORCID profile (opens in a new tab)" title="ORCID profile: 0009-0000-9168-5348">
+              <img src="images/brand/orcid.svg" alt="" width="24" height="24" aria-hidden="true">
+            </a>
+          </h3>
           <div class="role">PhD candidate</div>
           <ul>
             <li>Biologist</li>
@@ -761,12 +802,31 @@
         </ul>
       </section>
 
+      <section class="team-roster" id="collaborators" aria-labelledby="collaborators-heading">
+        <h3 id="collaborators-heading">Collaborators</h3>
+        <ul class="name-list" aria-labelledby="collaborators-heading">
+          <li>Patric Hagmann</li>
+          <li>Yasser Alemán-Gómez</li>
+          <li>Antoine Klauser</li>
+        </ul>
+      </section>
+
       <section class="team-roster" id="alumni" aria-labelledby="alumni-heading">
         <h3 id="alumni-heading">Alumni</h3>
         <ul class="name-list" aria-labelledby="alumni-heading">
-          <!-- Sample names; replace with the lab's alumni. -->
-          <li>Sophie Bernard</li>
-          <li>Lucas Morel</li>
+          <li>Patricia Schneider <span class="name-note">· Lab assistant (2022–23)</span></li>
+          <li>Gaël Majeux <span class="name-note">· Biology student, MSc intern</span></li>
+          <li>Gauvain Cung <span class="name-note">· Biology student, MSc intern</span></li>
+          <li>Marine Beuvant <span class="name-note">· Biology student, MSc intern (Toulouse, FR)</span></li>
+          <li>Gizem Demirkiran <span class="name-note">· Lab assistant (2022–23)</span></li>
+          <li>Alexis Revet <span class="name-note">· Child psychiatrist, MD-PhD, postdoc (Toulouse, FR)</span></li>
+          <li>Sidney Maffini <span class="name-note">· Biology student, MSc intern (Lausanne, CH)</span></li>
+          <li>Ôxence Loup <span class="name-note">· Medical student, MSc intern</span></li>
+          <li>Bérangère Aline <span class="name-note">· Medical student, MSc intern</span></li>
+          <li>Roméo Restellini <span class="name-note">· Physician, MD candidate</span></li>
+          <li>Johann Métrailler <span class="name-note">· Psychiatrist in training, MD candidate</span></li>
+          <li>Maria Berri <span class="name-note">· Psychiatrist in training, MD candidate</span></li>
+          <li>Mickael Das Neves <span class="name-note">· Lab assistant</span></li>
         </ul>
       </section>
     </div>
