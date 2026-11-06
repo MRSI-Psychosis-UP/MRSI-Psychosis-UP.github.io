@@ -21,9 +21,7 @@ https://multiscale-neurodevelopment.github.io/.
 
 - **Logo**: drop a PNG at `images/brand/logo.png`.
 - **Publication thumbnails**: the seven papers are listed in `#publications`,
-  newest first. Five have thumbnails; the Translational Psychiatry 2026
-  meta-analysis and the Molecular Psychiatry 2019 MMP9/RAGE paper still show
-  “Figure coming soon”. Image paths are listed in
+  newest first, with all seven thumbnails connected. Image paths are listed in
   [images/publications/README.md](images/publications/README.md).
 - **Google Scholar link**: update the `href="#"` on `.scholar-link`.
 - **Tools**: the `#tools` section has 2 placeholder cards — point them at
